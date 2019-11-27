@@ -1,0 +1,3 @@
+#org.springframework.boot.env.EnvironmentPostProcessor=com.david.example.environment.ExampleEnvironmentPostProcessor
+#org.springframework.context.ApplicationListener=com.david.example.listener.ExampleListener
+#org.springframework.context.ApplicationContextInitializer=com.david.example.initializer.ExampleApplicationContextInitializer

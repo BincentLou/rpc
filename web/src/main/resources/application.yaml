@@ -1,0 +1,115 @@
+#environment:
+#  dev:
+#    url: https://dev.example.com
+#    name: Developer Setup
+## 下面的会变成数组，my.servers[0]
+#my:
+#  servers:
+#    - dev.example.com
+#    - another.example.com
+#  security:
+#    username: david
+#    roles:
+#      - admin
+#      - user
+# 下面是不同profile下的不同配置，---符号必须
+#server:
+#  address: 192.168.1.100
+#---
+#spring:
+#  profiles: development
+#server:
+#  address: 127.0.0.1
+#---
+#spring:
+#  profiles: production
+#server:
+#  address: 192.168.1.120
+#spring:
+#  profiles:
+#    active: proA
+##国际化下面的文件一定要和默认的文件名一致，但不能带文件格式".properties,.xml"
+#  messages:
+#    basename: messages
+#    fallback-to-system-locale: false
+##banner地址
+#  banner:
+#    location: banner.txt
+#  application:
+#    admin:
+#      enabled: true
+##数据库
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/zeus_scm
+#    username: root
+#    password: dingdingwei
+#  #redis配置
+#  redis:
+#    host: localhost
+#    password: dingdingwei
+#
+#  #rabbitmq 配置
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    #重试 默认是关闭的
+#    template:
+#      retry:
+#        enabled: true
+#        initial-interval: 2s
+#    username: guest
+#    password: guest
+#  task:
+#    execution:
+#      pool:
+#        max-threads: 16
+#        queue-capacity: 100
+#        keep-alive: 10s
+#  jmx java managerment extensions
+#  jmx:
+#    enabled: true
+
+
+#日志参数
+logging:
+  file:
+    max-size: 1MB
+    max-history: 5
+  path: /Users/david/Desktop/技术资料/example/logs
+  level:
+    root: info
+    tomcat: TRACE
+  group:
+    tomcat: org.apache.catalina, org.apache.coyote, org.apache.tomcat
+# 自动配置的参数
+propertyhaskey: true
+# endpoint 管理
+#management:
+#  server:
+##    management server 的端口，默认是和web的端口一致，但是可以单独开放
+#    port: 8081
+##    如果 servlet用到了ssl 加密链接，management  可以单独不使用加密，也可以配置单独的加密
+#    ssl:
+#      enabled: false
+#  endpoints:
+##    屏蔽掉jmx的management 的endpoint
+##    jmx:
+##      exposure:
+##        exclude: *
+#    web:
+#      exposure:
+#        include: info,health,env,beans,loggers
+##        跨域访问
+#      cors:
+#        allowed-origins: https://example.com
+#        allowed-methods: GET,POST
+##        自定义management的根目录，比如actuator/health
+##      base-path: /monitor
+#  endpoint:
+#    health:
+#      show-details: always
+#    beans:
+#      #cache 保留多长时间
+#      cache:
+#        time-to-live: 5s
+

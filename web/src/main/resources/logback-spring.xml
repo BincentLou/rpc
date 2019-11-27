@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Logback Configuration.  -->
+<configuration debug="false">
+    <contextName>logback</contextName>
+    <springProperty scope="context" name="logging.path"
+                    source="logging.path" defaultValue="./logs" />
+    <springProperty scope="context" name="logging.name"
+                    source="logging.name" defaultValue="david-example" />
+    <springProperty scope="context" name="logging.level.root"
+                    source="logging.level.root" defaultValue="info" />
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+    <springProperty name="logging.pattern" source="logging.pattern" defaultValue="${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>${logging.pattern}</pattern>
+        </layout>
+    </appender>
+
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!-- 过滤掉非ERROR级别 -->
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>${logging.pattern}</pattern>
+        </layout>
+    </appender>
+
+    <appender name="AllFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- <file>${logging.path}/${logging.name}-all.log</file> -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>TRACE</level>
+        </filter>
+        <!-- 单个日志文件最多50MB, 30天的日志存储周期，最大不能超过20GB -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logging.path}/${logging.name}-all-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>50MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder charset="UTF-8"> <!-- encoder 可以指定字符集，对于中文输出有意义 -->
+            <pattern>${logging.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ErrorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- <file>${logging.path}/${logging.name}-error.log</file> -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!-- 过滤掉非ERROR级别 -->
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <!-- 单个日志文件最多50MB, 30天的日志存储周期，最大不能超过20GB -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logging.path}/${logging.name}-error-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>50MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder charset="UTF-8"> <!-- encoder 可以指定字符集，对于中文输出有意义 -->
+            <pattern>${logging.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.apache" level="error" addtivity="false"/>
+    <logger name="org.springframework" level="info" addtivity="false"/>
+    <logger name="org.fit" level="error" addtivity="false"/>
+    <logger name="org.mabb.fontverter" level ="error" addtivity="false"/>
+    <logger name="org.apache.pdfbox" level="error" addtivity="false"/>
+    <logger name="org.reflections" level="info" addtivity="false"/>
+
+    <root level="${logging.level.root}">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDERR" />
+        <appender-ref ref="AllFile" />
+        <appender-ref ref="ErrorFile" />
+    </root>
+
+</configuration>

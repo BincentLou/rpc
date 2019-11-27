@@ -1,0 +1,72 @@
+2019-08-26 21:57:18.812  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 监听到 application的事件org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent[source=org.springframework.boot.SpringApplication@5c671d7f]
+2019-08-26 21:57:18.814  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布false
+2019-08-26 21:57:18.814  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.boot.SpringApplication
+2019-08-26 21:57:18.832  INFO 7219 --- [main] o.s.boot.SpringApplication               : 
+hello world
+this is my first example
+2.0.6.RELEASE
+
+2019-08-26 21:57:18.935  INFO 7219 --- [main] c.d.e.initializer.ExampleInitializer     : 创建 applicationContext org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3adcc812: startup date [Thu Jan 01 08:00:00 CST 1970]; root of context hierarchy
+2019-08-26 21:57:18.948  INFO 7219 --- [main] ExampleApplication     : Starting ExampleApplication on daviddeMacBook-Pro.local with PID 7219 (started by david in /Users/david/Desktop/技术资料/example)
+2019-08-26 21:57:18.948  INFO 7219 --- [main] ExampleApplication     : The following profiles are active: test,proA
+2019-08-26 21:57:19.051  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 监听到 application的事件org.springframework.boot.context.event.ApplicationPreparedEvent[source=org.springframework.boot.SpringApplication@5c671d7f]
+2019-08-26 21:57:19.051  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布false
+2019-08-26 21:57:19.051  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.boot.SpringApplication
+2019-08-26 21:57:19.052  INFO 7219 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3adcc812: startup date [Mon Aug 26 21:57:19 CST 2019]; root of context hierarchy
+2019-08-26 21:57:20.109  INFO 7219 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:57:20.133  INFO 7219 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-26 21:57:20.133  INFO 7219 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-08-26 21:57:20.147  INFO 7219 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/david/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-08-26 21:57:20.230  INFO 7219 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-26 21:57:20.230  INFO 7219 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1178 ms
+2019-08-26 21:57:20.277  INFO 7219 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-26 21:57:20.282  INFO 7219 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-26 21:57:20.283  INFO 7219 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-26 21:57:20.283  INFO 7219 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-26 21:57:20.283  INFO 7219 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-26 21:57:20.607  INFO 7219 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 21:57:20.764  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3adcc812: startup date [Mon Aug 26 21:57:19 CST 2019]; root of context hierarchy
+2019-08-26 21:57:20.842  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/shutdown]}" onto public java.lang.String com.david.example.controller.Example.shutdown()
+2019-08-26 21:57:20.845  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/profile]}" onto public java.lang.String com.david.example.controller.Example.profile()
+2019-08-26 21:57:20.846  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/arguments]}" onto public java.lang.String com.david.example.controller.Example.arguments()
+2019-08-26 21:57:20.846  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.david.example.controller.Example.home()
+2019-08-26 21:57:20.847  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/appName]}" onto public java.lang.String com.david.example.controller.Example.appName()
+2019-08-26 21:57:20.847  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/localserverport]}" onto public java.lang.String com.david.example.controller.Example.localserverport()
+2019-08-26 21:57:20.847  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/profiles]}" onto public java.lang.String ExampleProfileController.profiles()
+2019-08-26 21:57:20.848  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/security]}" onto public java.lang.String ExampleYamlConfigController.security()
+2019-08-26 21:57:20.849  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/yamlconfig]}" onto public java.lang.String ExampleYamlConfigController.yamlconfig()
+2019-08-26 21:57:20.867  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-26 21:57:20.872  INFO 7219 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-26 21:57:20.896  INFO 7219 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 21:57:20.896  INFO 7219 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 21:57:21.024  INFO 7219 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-08-26 21:57:21.033  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 监听到 application的事件org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3adcc812: startup date [Mon Aug 26 21:57:19 CST 2019]; root of context hierarchy]
+2019-08-26 21:57:21.033  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布true
+2019-08-26 21:57:21.033  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext
+2019-08-26 21:57:21.072  INFO 7219 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:57:21.073  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 监听到 application的事件org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent[source=org.springframework.boot.web.embedded.tomcat.TomcatWebServer@1dbd580]
+2019-08-26 21:57:21.073  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布false
+2019-08-26 21:57:21.073  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+2019-08-26 21:57:21.078  INFO 7219 --- [main] ExampleApplication     : Started ExampleApplication in 2.782 seconds (JVM running for 3.717)
+2019-08-26 21:57:21.079  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 监听到 application的事件org.springframework.boot.context.event.ApplicationStartedEvent[source=org.springframework.boot.SpringApplication@5c671d7f]
+2019-08-26 21:57:21.079  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布false
+2019-08-26 21:57:21.080  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.boot.SpringApplication
+2019-08-26 21:57:21.081  INFO 7219 --- [main] c.d.e.a.ExampleApplicationRunner         : exampleApplicationRunner run
+2019-08-26 21:57:21.082  INFO 7219 --- [main] c.d.e.c.ExampleCommandLineRunner         : example command line runner run
+2019-08-26 21:57:21.083  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 监听到 application的事件org.springframework.boot.context.event.ApplicationReadyEvent[source=org.springframework.boot.SpringApplication@5c671d7f]
+2019-08-26 21:57:21.083  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布false
+2019-08-26 21:57:21.083  INFO 7219 --- [main] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.boot.SpringApplication
+2019-08-26 21:57:51.317  INFO 7219 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-26 21:57:51.317  INFO 7219 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-26 21:57:51.333  INFO 7219 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2019-08-26 21:57:51.433  INFO 7219 --- [http-nio-8080-exec-1] c.d.example.listener.ExampleListener     : 监听到 application的事件ServletRequestHandledEvent: url=[/profiles]; client=[127.0.0.1]; method=[GET]; servlet=[dispatcherServlet]; session=[null]; user=[null]; time=[88ms]; status=[OK]
+2019-08-26 21:57:51.433  INFO 7219 --- [http-nio-8080-exec-1] c.d.example.listener.ExampleListener     : 判断事件是本context发布false
+2019-08-26 21:57:51.433  INFO 7219 --- [http-nio-8080-exec-1] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.web.servlet.DispatcherServlet
+2019-08-26 21:57:51.570  INFO 7219 --- [http-nio-8080-exec-2] c.d.example.listener.ExampleListener     : 监听到 application的事件ServletRequestHandledEvent: url=[/favicon.ico]; client=[127.0.0.1]; method=[GET]; servlet=[dispatcherServlet]; session=[null]; user=[null]; time=[29ms]; status=[OK]
+2019-08-26 21:57:51.570  INFO 7219 --- [http-nio-8080-exec-2] c.d.example.listener.ExampleListener     : 判断事件是本context发布false
+2019-08-26 21:57:51.570  INFO 7219 --- [http-nio-8080-exec-2] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.web.servlet.DispatcherServlet
+2019-08-26 22:02:26.963  INFO 7219 --- [Thread-8] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3adcc812: startup date [Mon Aug 26 21:57:19 CST 2019]; root of context hierarchy
+2019-08-26 22:02:26.965  INFO 7219 --- [Thread-8] c.d.example.listener.ExampleListener     : 监听到 application的事件org.springframework.context.event.ContextClosedEvent[source=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3adcc812: startup date [Mon Aug 26 21:57:19 CST 2019]; root of context hierarchy]
+2019-08-26 22:02:26.965  INFO 7219 --- [Thread-8] c.d.example.listener.ExampleListener     : 判断事件是本context发布true
+2019-08-26 22:02:26.965  INFO 7219 --- [Thread-8] c.d.example.listener.ExampleListener     : 判断事件是本context发布class org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext
+2019-08-26 22:02:26.966  INFO 7219 --- [Thread-8] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
