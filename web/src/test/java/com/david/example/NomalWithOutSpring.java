@@ -17,18 +17,20 @@ import java.util.Date;
 public class NomalWithOutSpring {
 
     public static void main(String[] args){
-        String money = "000000000013227";
-        if (StringUtils.isEmpty(money)) {
+        String money = "800.8000";
+        System.out.println(defaultString2Money(money));
 
-        } else if ((new BigDecimal(money)).compareTo(new BigDecimal("0")) == 0) {
+        System.out.println(new BigDecimal("132.27").compareTo(defaultString2Money("132.2700")));
+
+    }
+    public static BigDecimal defaultString2Money(String amount) {
+        if (StringUtils.isEmpty(amount)) {
+            throw new IllegalArgumentException("amount can not be null");
         } else {
-            String perMoney = money.substring(0, money.length() - 2);
-            String aftMoney = money.substring(money.length() - 2);
-            money = perMoney + "." + aftMoney;
-            BigDecimal formatMoney = (new BigDecimal(money)).setScale(4, 4);
-            System.out.println(formatMoney);
+            return string2Decimal(amount, 2, 1);
         }
     }
+
 
     public static BigDecimal string2Decimal(String amount, int newScale, int roundingMode) {
         if (amount == null) {
@@ -41,4 +43,5 @@ public class NomalWithOutSpring {
             throw new IllegalArgumentException("Invalid rounding mode");
         }
     }
+
 }
