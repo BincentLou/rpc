@@ -10,7 +10,7 @@ public class MyThreadFactory {
 
     private static String ThreadNamePre = "David's Thread group";
 
-    private static volatile int num = 0;
+    private static volatile int num = 1;
     public static Thread getThread(Runnable runnable){
         Thread a = new Thread(runnable,ThreadNamePre+num);
         num++;
