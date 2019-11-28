@@ -2,6 +2,7 @@ com/david/example/DTO/OtherQuest.class
 com/david/rpcproxy/anno/DemoRPCMethodIntercept.class
 com/david/example/nosql/ExampleRedisConfig.class
 com/david/example/quartz/Job/ExampleJob.class
+com/david/rpcproxy/anno/DemoRpcClient.class
 com/david/example/controller/ExampleExecutorController.class
 com/david/example/ExampleApplication.class
 com/david/example/transaction/ExampleTransaction.class
@@ -12,7 +13,6 @@ com/david/example/proxy/StaticProxy$1.class
 com/david/example/proxy/TargetInterface.class
 com/david/example/proxy/TargetObj2.class
 com/david/example/controller/ExampleJdbcController.class
-com/david/rpcproxy/anno/DemoAnnotation.class
 com/david/example/springMvc/mvcconfig/ExampleMvcConfig.class
 com/david/example/springMvc/controlleradvice/ExampleExceptionHandler.class
 com/david/example/springMvc/viewresolver/ExampleViewResolver.class
@@ -50,8 +50,10 @@ com/david/example/configproperty/ExampleProfileConfig.class
 com/david/example/springMvc/localresolver/ExampleLocalInterceptor.class
 com/david/example/configproperty/ExampleConfigurationProperty.class
 com/david/example/endpoint/ActuatorSecurity.class
+com/david/rpcproxy/controller/DemoRpcController.class
 com/david/example/mq/FanoutReceiver.class
 com/david/example/controller/ExampleExceptionController.class
+com/david/rpcproxy/anno/DemoImportBeanDefinitionRegistrar.class
 com/david/example/listener/ExampleListener.class
 com/david/example/commandlinerunner/ExampleCommandLineRunner.class
 com/david/example/mq/RedirectReceiver.class

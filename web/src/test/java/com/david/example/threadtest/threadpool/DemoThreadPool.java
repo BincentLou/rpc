@@ -47,8 +47,7 @@ public class DemoThreadPool {
     public void submit(Runnable task){
         // 如果工作线程小于核心线程数
         if(workCount<corePoolSize){
-            increaseWorkCount();
-            Worker w =addWork(task);
+            Worker w =addWork(task,true);
             coreWorkerSet.add(w);
             if(w.thread!=null){
                 w.thread.start();
@@ -63,8 +62,7 @@ public class DemoThreadPool {
         }
         //如果任务队列满了，且工作线程小于最大线程数量，则新增线程
         if(workCount>=corePoolSize&&workCount<maximunPoolSize&&taskQueue.size()==maxQueueSize){
-            increaseWorkCount();
-            Worker w = addWork(null);
+            Worker w = addWork(null,false);
             if(w.thread!=null){
                 w.thread.start();
             }
@@ -77,9 +75,12 @@ public class DemoThreadPool {
     }
 
     //新增工作线程
-    private Worker addWork(Runnable task) {
+    private Worker addWork(Runnable task,boolean core) {
         Worker worker =  new Worker(task);
-
+        if(core){
+            coreWorkerSet.add(worker);
+        }
+        increaseWorkCount();
         return worker;
     }
 
@@ -95,7 +96,6 @@ public class DemoThreadPool {
 
         private Runnable task;
 
-
         public Worker(Runnable task) {
             this.thread = getThreadFactory().newThread(this);
             this.task = task;
@@ -107,17 +107,13 @@ public class DemoThreadPool {
         }
 
         private void runWork(Worker worker) {
-            Thread thread = worker.thread;
-            if(thread!=null){
-                while(task!=null||(task = getTask())!=null){
-                    task.run();
-                    task = null;
-                }
-                this.task = null;
-                decreaseWorkCount();
+            while(task!=null||(task = getTask())!=null){
+                task.run();
+                task = null;
             }
-            this.thread  = threadFactory.newThread(this);
-            thread.start();
+            this.task = null;
+            decreaseWorkCount();
+            coreWorkerSet.remove(worker);
         }
 
         private Runnable getTask() {

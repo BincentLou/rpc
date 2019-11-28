@@ -5,6 +5,7 @@
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/rpcproxy/anno/DemoRPCMethodIntercept.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/springMvc/handlerexceptionresolver/ExampleHandlerExceptionResolver.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/endpoint/LoggerEndPointController.java
+/Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/rpcproxy/anno/DemoRpcClient.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/controller/ExampleProfileController.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/springMvc/serilizabe/ExampleSerializer.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/mq/RabbitMqSender.java
@@ -33,7 +34,6 @@
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/nosql/ExampleRedisConfig.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/DTO/OtherQuest.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/configproperty/ExampleProfileConfig.java
-/Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/rpcproxy/anno/DemoAnnotation.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/rpcproxy/anno/HttpClient.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/factorypost/ExampleBeanFactoryPostProcessor.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/endpoint/ActuatorSecurity.java
@@ -45,6 +45,7 @@
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/proxy/TargetInterface.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/beanpost/ExampleBeanPostProcessor.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/springMvc/handlermappingadapter/ExampleRequestMappingHandlerMappingAdapter.java
+/Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/rpcproxy/anno/DemoImportBeanDefinitionRegistrar.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/configproperty/ExampleConfigurationProperty.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/rpcproxy/DemoApplication.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/transaction/ExampleTransaction.java
@@ -57,6 +58,7 @@
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/controller/ExampleMessageSourceController.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/springMvc/viewresolver/ExampleErrorViewResolver.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/ExampleParentObj.java
+/Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/rpcproxy/controller/DemoRpcController.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/controller/ExampleExceptionController.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/ExampleApplication.java
 /Users/david/Desktop/技术资料/demo/example/web/src/main/java/com/david/example/applicationrunner/ExampleApplicationRunner.java
