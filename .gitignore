@@ -5,4 +5,4 @@
 .project
 *target/
 */target/*
-quartz/target/*
+*quartz/target/*

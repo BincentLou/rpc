@@ -57,6 +57,7 @@ public class DemoThreadPool {
         //如果工作线程大于核心线程 且工作队列还没满，放入队列
         if(workCount>=corePoolSize&&taskQueue.size()<maxQueueSize){
             taskQueue.add(task);
+            wakeUpWorker();
             System.out.println("waiting task 数量"+taskQueue.size());
             return;
         }
@@ -71,6 +72,14 @@ public class DemoThreadPool {
         //如果队列满了，线程也到达最大值，拒绝执行
         if(workCount==maximunPoolSize){
             System.out.println("reject thread "+rejectCount.getAndIncrement());
+        }
+    }
+
+    private void wakeUpWorker() {
+        for (Worker worker:coreWorkerSet) {
+           if(worker.interrupt()){
+               break;
+           }
         }
     }
 
@@ -107,13 +116,22 @@ public class DemoThreadPool {
         }
 
         private void runWork(Worker worker) {
-            while(task!=null||(task = getTask())!=null){
-                task.run();
-                task = null;
+            for(;;){
+                while(task!=null||(task = getTask())!=null){
+                    task.run();
+                    task = null;
+                }
+                this.task = null;
+                if(coreWorkerSet.contains(worker)) {
+                    try {
+                        thread.sleep(Integer.MAX_VALUE);
+                    } catch (InterruptedException e) {
+                        System.out.println("被叫醒-继续执行task");
+                    }
+                }
+                decreaseWorkCount();
+                break;
             }
-            this.task = null;
-            decreaseWorkCount();
-            coreWorkerSet.remove(worker);
         }
 
         private Runnable getTask() {
@@ -133,6 +151,14 @@ public class DemoThreadPool {
         private void decreaseWorkCount() {
             workCount--;
             System.out.println("工作线程数量："+workCount);
+        }
+
+        public boolean interrupt(){
+            if(this.thread.isInterrupted()){
+                return false;
+            }
+            this.thread.interrupt();
+            return true;
         }
     }
 

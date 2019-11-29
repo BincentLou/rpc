@@ -19,11 +19,11 @@ public class ThreadPoolTest {
             demoThreadPool.submit(new Runnable() {
                 @Override
                 public void run() {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        System.out.println("线程睡眠被打断");
-                    }
+//                    try {
+//                        Thread.sleep(100);
+//                    } catch (InterruptedException e) {
+//                        System.out.println("线程睡眠被打断");
+//                    }
                     System.out.println("执行任务"+i.getAndIncrement());
                 }
             });
