@@ -34,13 +34,13 @@ public class DemoThreadPool {
     private AtomicInteger rejectCount = new AtomicInteger(1);
 
     private BlockingDeque<Runnable> taskQueue = new LinkedBlockingDeque<>();
-    private ThreadFactoryDemo threadFactory;
+    private DemoThreadFactory threadFactory;
 
     public DemoThreadPool(int corePoolSize, int maximunPoolSize, int rejectExecutorHandler) {
         this.corePoolSize = corePoolSize;
         this.maximunPoolSize = maximunPoolSize;
         this.rejectExecutorHandler = rejectExecutorHandler;
-        threadFactory = new ThreadFactoryDemo();
+        threadFactory = new DemoThreadFactory();
     }
 
     //新增任务
@@ -160,7 +160,7 @@ public class DemoThreadPool {
         }
     }
 
-    private ThreadFactoryDemo getThreadFactory() {
+    private DemoThreadFactory getThreadFactory() {
         return this.threadFactory;
     }
 }

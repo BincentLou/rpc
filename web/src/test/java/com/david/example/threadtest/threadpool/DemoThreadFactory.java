@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Description:${TODO}(这里用一句话描述这个类的作用)
  * @since 1.0
  **/
-public class ThreadFactoryDemo {
+public class DemoThreadFactory {
 
     private static final AtomicInteger poolNumber = new AtomicInteger(1);
 
