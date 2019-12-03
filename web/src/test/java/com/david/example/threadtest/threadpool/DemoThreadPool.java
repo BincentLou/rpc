@@ -135,16 +135,14 @@ public class DemoThreadPool {
         }
 
         private Runnable getTask() {
-            for(;;){
-                if(CollectionUtils.isEmpty(taskQueue)){
-                    return null;
-                }
-                try {
-                    return taskQueue.take();
-                } catch (InterruptedException e) {
-                    decreaseWorkCount();
-                    return null;
-                }
+            if(CollectionUtils.isEmpty(taskQueue)){
+                return null;
+            }
+            try {
+                return taskQueue.take();
+            } catch (InterruptedException e) {
+                decreaseWorkCount();
+                return null;
             }
         }
 

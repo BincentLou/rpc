@@ -17,10 +17,8 @@ import java.util.Date;
 public class NomalWithOutSpring {
 
     public static void main(String[] args){
-        String money = "800.8000";
-        System.out.println(defaultString2Money(money));
-
-        System.out.println(new BigDecimal("132.27").compareTo(defaultString2Money("132.2700")));
+        String a = "[\"1\",\"2\"]";
+        System.out.println(a.contains("1"));
 
     }
     public static BigDecimal defaultString2Money(String amount) {
