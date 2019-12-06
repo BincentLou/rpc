@@ -13,16 +13,15 @@ public class MyRunnable implements Runnable{
     private static AtomicInteger a = new AtomicInteger(1);
     @Override
     public void run() {
-        AtomicInteger b = new AtomicInteger(1);
-        for(int i=0;i<5;i++){
-            Runnable task = new Runnable() {
-
-                @Override
-                public void run() {
-                    System.out.println(Thread.currentThread().getName()+"新的任务线程:"+a.getAndIncrement());
-                }
-            };
-            task.run();
+        System.out.println("当前线程打断状态："+Thread.interrupted());
+        System.out.println("当前线程打断状态："+Thread.interrupted());
+        System.out.println(Thread.currentThread().getName()+"新的任务线程:"+a.getAndIncrement());
+        try {
+            Thread.sleep(1000);
+            System.out.println("当前线程打断状态："+Thread.interrupted());
+        } catch (InterruptedException e) {
+            System.out.println("睡眠被打断");
+            System.out.println("当前线程打断状态："+Thread.interrupted());
         }
     }
 }

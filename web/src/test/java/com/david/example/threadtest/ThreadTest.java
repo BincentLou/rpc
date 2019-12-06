@@ -9,9 +9,19 @@ package com.david.example.threadtest;
 public class ThreadTest {
     public static void main(String[] args){
         Runnable runnable = new MyRunnable();
-        for (int i=0;i<10;i++){
+//        for (int i=0;i<10;i++){
             Thread thread = MyThreadFactory.getThread(runnable);
             thread.start();
-        }
+            Thread b = MyThreadFactory.getThread(new Runnable() {
+                @Override
+                public void run() {
+                   thread.interrupt();
+                }
+            });
+           System.out.println("thread 的interrupt"+thread.isInterrupted());
+            b.start();
+        System.out.println("thread 的interrupt"+thread.isInterrupted());
+        System.out.println("b 的interrupt"+b.isInterrupted());
+//        }
     }
 }
