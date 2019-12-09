@@ -17,7 +17,7 @@ import java.util.concurrent.BlockingQueue;
 public class UnsafeTest {
     public static void main(String[] args){
 
-        Integer a = Integer.valueOf(10);
+        Integer a = 10;
         // unsafe 的构造函数对classloader有限制，所以要用反射获取实例
         Field unsafeObj = Unsafe.class.getDeclaredFields()[0];
         unsafeObj.setAccessible(true);
@@ -36,7 +36,7 @@ public class UnsafeTest {
         //不知为啥，不起作用
         unsafe.compareAndSwapInt(a,offset,2,10);
         //可以正常使用
-        unsafe.putInt(a,offset,2);
+//        unsafe.putInt(a,offset,2);
         System.out.println(a.intValue());
 
     }
