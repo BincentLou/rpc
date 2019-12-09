@@ -37,5 +37,8 @@ public class UnsafeTest {
 //        unsafe.putInt(a,offset,2);
         System.out.println(a.intValue());
 
+        synchronized (a){
+
+        }
     }
 }
