@@ -33,9 +33,7 @@ public class UnsafeTest {
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
-        //不知为啥，不起作用
-        unsafe.compareAndSwapInt(a,offset,2,10);
-        //可以正常使用
+        unsafe.compareAndSwapInt(a,offset,10,2);
 //        unsafe.putInt(a,offset,2);
         System.out.println(a.intValue());
 
