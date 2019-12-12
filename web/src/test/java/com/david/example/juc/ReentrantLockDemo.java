@@ -2,6 +2,8 @@ package com.david.example.juc;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
@@ -17,7 +19,6 @@ import java.util.concurrent.locks.Lock;
  * @since 1.0
  **/
 public class ReentrantLockDemo implements Lock {
-
 
     private final WaitQueue queue = new WaitQueue();
 
@@ -51,16 +52,19 @@ public class ReentrantLockDemo implements Lock {
     @Override
     public Condition newCondition() {
         // 暂时不支持 condition多等待线程
-        return null;
+        return queue.newCondition();
     }
 
-
-    //内部类 等待队列
-    public class WaitQueue extends AbstractQueuedSynchronizer implements Serializable {
+    /**
+     * 内部类 等待队列
+     */
+    public static class WaitQueue extends AbstractQueuedSynchronizer implements Serializable {
 
         private static final long serialVersionUID = -8060793292559526565L;
 
-
+        final ConditionObject newCondition() {
+            return new ConditionObject();
+        }
         /**
          * Fair version of tryAcquire.  Don't grant access unless
          * recursive call or no waiters or is first.
@@ -98,6 +102,11 @@ public class ReentrantLockDemo implements Lock {
             }
             setState(c);
             return free;
+        }
+
+        @Override
+        protected boolean isHeldExclusively() {
+            return true;
         }
     }
 }
