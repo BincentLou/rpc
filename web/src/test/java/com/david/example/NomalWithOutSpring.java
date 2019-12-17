@@ -28,6 +28,16 @@ public class NomalWithOutSpring {
 
 //        List<String> a= Arrays.asList("0000-00-00","0000-00-00","2030-07-11","2019-11-12");
 
+//        test_streamSorted();
+        BigDecimal a = null;
+        if(a!=null&&a.compareTo(BigDecimal.ZERO)>0){
+            System.out.println("想哭");
+        }else {
+            System.out.println("还是想哭");
+        }
+    }
+
+    private static void test_streamSorted() {
         DateDemo b = new DateDemo("0000-00-00","b");
         DateDemo c = new DateDemo("0000-00-00","c");
         DateDemo d = new DateDemo("2030-07-11","d");

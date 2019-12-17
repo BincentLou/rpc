@@ -104,6 +104,10 @@ public class ReentrantLockDemo implements Lock {
             return free;
         }
 
+        /**
+         *  必须实现本方法，否则会报错
+         * @return
+         */
         @Override
         protected boolean isHeldExclusively() {
             return true;
