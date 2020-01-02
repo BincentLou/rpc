@@ -35,13 +35,19 @@ public class NomalWithOutSpring {
 //        }else {
 //            System.out.println("还是想哭");
 //        }
+//
+//        List<String> a = Arrays.asList("","0000-00","1992-10-11","2019-12-21","20191211");
+//        List<String> b = a.stream().filter(item -> {
+//            return !(StringUtils.isEmpty(item) || item.contains("0000"));
+//        }).collect(Collectors.toList());
+//        System.out.println(JSON.toJSONString(b));
 
-        List<String> a = Arrays.asList("","0000-00","1992-10-11","2019-12-21","20191211");
-        List<String> b = a.stream().filter(item -> {
-            return !(StringUtils.isEmpty(item) || item.contains("0000"));
-        }).collect(Collectors.toList());
-        System.out.println(JSON.toJSONString(b));
+        String d = "2021-01-02T09:13:33.550Z";
+
+        Date dd = JSON.parseObject(d, Date.class);
+        System.out.println(dd);
     }
+
 
     private static void test_streamSorted() {
         DateDemo b = new DateDemo("0000-00-00","b");
