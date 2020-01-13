@@ -15,9 +15,9 @@ import java.util.List;
  * @Description:yaml配置文件简单示例
  * @since 1.0
  **/
-@Component
-@Validated
-@ConfigurationProperties(prefix = "my")
+//@Component
+//@Validated
+//@ConfigurationProperties(prefix = "my")
 public class ExampleYamlConfig {
 
     @NotNull

@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description:${TODO}(这里用一句话描述这个类的作用)
  * @since 1.0
  **/
-@EnableDemoAnno
-@SpringBootApplication(scanBasePackages = {"com.david.rpcproxy"})
+//@EnableDemoAnno
+//@SpringBootApplication(scanBasePackages = {"com.david.rpcproxy"})
 public class DemoApplication {
     public static void main(String[] args){
         SpringApplication.run(DemoApplication.class,args);

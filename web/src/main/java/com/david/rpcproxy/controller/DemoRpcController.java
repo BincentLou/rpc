@@ -13,14 +13,14 @@ import javax.annotation.Resource;
  * @Description:${TODO}(这里用一句话描述这个类的作用)
  * @since 1.0
  **/
-@RestController
+//@RestController
 public class DemoRpcController {
 
-    @Resource
-    private DemoRpcBean demoRpcBean;
-
-    @RequestMapping("/askBaidu")
-    public String askBaidu(){
-        return demoRpcBean.ask("你好");
-    }
+//    @Resource
+//    private DemoRpcBean demoRpcBean;
+//
+//    @RequestMapping("/askBaidu")
+//    public String askBaidu(){
+//        return demoRpcBean.ask("你好");
+//    }
 }

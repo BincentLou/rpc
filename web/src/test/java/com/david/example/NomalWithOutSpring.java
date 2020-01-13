@@ -4,6 +4,7 @@ package com.david.example;
 import com.alibaba.fastjson.JSON;
 import org.springframework.util.StringUtils;
 
+import javax.swing.*;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -26,26 +27,11 @@ public class NomalWithOutSpring {
 
     public static void main(String[] args){
 
-//        List<String> a= Arrays.asList("0000-00-00","0000-00-00","2030-07-11","2019-11-12");
-
-//        test_streamSorted();
-//        BigDecimal a = null;
-//        if(a!=null&&a.compareTo(BigDecimal.ZERO)>0){
-//            System.out.println("想哭");
-//        }else {
-//            System.out.println("还是想哭");
-//        }
 //
-//        List<String> a = Arrays.asList("","0000-00","1992-10-11","2019-12-21","20191211");
-//        List<String> b = a.stream().filter(item -> {
-//            return !(StringUtils.isEmpty(item) || item.contains("0000"));
-//        }).collect(Collectors.toList());
-//        System.out.println(JSON.toJSONString(b));
+        String a = "D001";
+        int b = 13<<24|0<<16|0<<8|1;
+        System.out.println(b);
 
-        String d = "2021-01-02T09:13:33.550Z";
-
-        Date dd = JSON.parseObject(d, Date.class);
-        System.out.println(dd);
     }
 
 

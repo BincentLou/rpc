@@ -6,7 +6,7 @@ package com.david.rpcproxy.anno;
  * @Description:
  * @since 1.0
  **/
-@DemoRpcClient(name = "demoBean")
+//@DemoRpcClient(name = "demoBean")
 public interface DemoRpcBean {
 
     String ask(String wd);

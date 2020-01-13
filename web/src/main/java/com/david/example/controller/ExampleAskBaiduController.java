@@ -12,7 +12,7 @@ import javax.annotation.Resource;
  * @Description:${TODO}(这里用一句话描述这个类的作用)
  * @since 1.0
  **/
-@RestController
+//@RestController
 public class ExampleAskBaiduController {
     @Resource
     private DemoRpcBean demoRpcBean;

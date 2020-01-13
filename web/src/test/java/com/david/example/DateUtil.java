@@ -159,14 +159,15 @@ public class DateUtil {
     }
 
     public static void main(String[] args){
+        String a = "2020-06-30 16:22:15";
         Date now = new Date();
         try {
-            now = DateUtil.parseDate(DateUtil.formatDate(now, DateUtil.YYYY_MM_DD), DateUtil.YYYY_MM_DD);
+           Date b =  DateUtil.parseDate(a,"yyyy-MM-dd");
 //            now = DateUtil.parseDate("2026-12-11",DateUtil.YYYY_MM_DD);
+            System.out.println(DateUtil.formatDate(b,"yyyy-MM-dd"));
         } catch (ParseException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println(now.toString());
     }
 
 }
