@@ -27,11 +27,9 @@ public class NomalWithOutSpring {
 
     public static void main(String[] args){
 
-//
-        String a = "D001";
-        int b = 13<<24|0<<16|0<<8|1;
-        System.out.println(b);
-
+        String a = "0.044518";
+        BigDecimal b = new BigDecimal(a);
+        System.out.println(b.toString());
     }
 
 
