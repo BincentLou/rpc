@@ -21,7 +21,7 @@
     <properties>
         <spring.version>5.0.10.RELEASE</spring.version>
         <quartz.version>2.0.6.RELEASE</quartz.version>
-        <spring.boot.version>2.0.6.RELEASE</spring.boot.version>
+        <spring.boot.version>2.5.12</spring.boot.version>
         <com.david.common>1.0-SNAPSHOT</com.david.common>
     </properties>
 
